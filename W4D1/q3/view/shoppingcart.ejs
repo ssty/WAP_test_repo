@@ -1,0 +1,33 @@
+<header>
+    <%- include('header.ejs') %>
+</header>
+<h2>Your cart</h2>
+<div class="container border">
+    <h4 class="title">
+        Cart List
+    </h4>
+    <div class="row">
+        <table class="table table-striped">
+            <tr>
+                <th>Product Name</th>
+                <th>Total Price</th>
+                <th>Quantity</th>
+            </tr>
+            <% for(let p of cartList){ %>
+                <tr>
+                    <td>
+                        <%=p.name%>
+                    </td>
+                    <td>
+                        <%=p.price%>
+                    </td>
+                    <td>
+                        <%=p.quantity%>
+                    </td>
+                </tr>
+                <% } %>
+        </table>
+    </div>
+</div>
+
+<%- include('footer.ejs') %>

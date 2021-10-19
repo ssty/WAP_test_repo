@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Quiz</title>
+</head>
+
+<body>
+    <ul>
+        <% for(let i of list) { %>
+            <li><%= i %></li>
+        <% } %>
+    </ul>
+    <a href="/add">add</a>
+	
+	<form method="post">
+        <input type="text" id="name" name="name" />
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
+
+</html>

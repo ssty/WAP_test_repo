@@ -1,0 +1,30 @@
+<header>
+    <%- include('header.ejs') %>
+</header>
+
+<h2>Our available products</h2>
+<div class="row">
+    <% for(let product of productList){ %>
+        <div class="col-3 card border">
+            <div class="card-header text-center">
+                Product Name : <%=product.name%>
+            </div>
+            <div class="card-body">
+                <p>
+                    Product Id : <%=product.id%>
+                </p>
+                <p>
+                    Price : $<%=product.price%>
+                </p>
+                <form action="/addToCart" method="POST">
+                    <input type="hidden" name="name" value="<%=product.name%>">
+                    <input type="hidden" name="price" value="<%=product.price%>">
+                    <input class="btn btn-outline-success float-right mt-2" type="submit" name="cart"
+                        value="Add to Cart">
+                </form>
+            </div>
+        </div>
+        <% } %>
+</div>
+
+<%- include('footer.ejs') %>
